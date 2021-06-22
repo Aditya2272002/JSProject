@@ -27,6 +27,79 @@
     <title>Tasky</title>
 </head>
 <body>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1"
+   aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="imageurl" class="form-label">
+             Image URL
+            </label>
+            <input type="url" class="form-control"
+             id="imageurl" 
+             placeholder="https://shapeai/image.jpg"
+            aria-describedby="imageUrl"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="tasktitle" class="form-label">
+             Task Title
+            </label>
+            <input type="text" class="form-control"
+             id="tasktitle" 
+             placeholder="eg: Javascript Project"
+            aria-describedby="Task Title"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="taskType" class="form-label">
+             Task Type
+            </label>
+            <input type="text" class="form-control"
+             id="taskType"
+             placeholder="eg: Project 1" 
+            aria-describedby="Task Type"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="taskDescription" class="form-label">
+             Task Description
+            </label>
+            <textarea
+            rows="4" 
+            class="form-control"
+             id="taskDescription" 
+             placeholder="Describe more about your work"
+            aria-describedby="Task Description"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button"
+           class="btn btn-primary"
+            onclick="saveChanges()"
+            data-bs-dismiss="modal" >
+            Save changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--NavBar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand fw-bold text-primary" href="#">TASKY</a>
@@ -48,7 +121,8 @@
               </li>
             </ul>
           </div>
-          <button type="button" class="btn btn-primary "><i class="fas fa-plus-circle"></i>
+          <button type="button" class="btn btn-primary " data-bs-toggle="modal"
+           data-bs-target="#exampleModal"><i class="fas fa-plus-circle"></i>
             Add Task</button>
         </div>
       </nav>
@@ -72,7 +146,7 @@
 
         <!--Card-->
         <section>
-          <div class="row">
+          <div class="row task__container">
             <div class="col-md-6 col-lg-4">
               <div class="card">
                 <div class="card-header d-flex justify-content-end gap-2">
@@ -101,5 +175,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
     crossorigin="anonymous"></script>
+
+    <!--Our JavaScript File-->
+    <script src="index.js"></script>
 </body>
 </html>
